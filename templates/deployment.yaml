@@ -3,6 +3,7 @@ kind: Deployment
 metadata:
   name: {{ include "example-helm.fullname" . }}
   labels:
+    mytest: label
     {{- include "example-helm.labels" . | nindent 4 }}
 spec:
 {{- if not .Values.autoscaling.enabled }}
